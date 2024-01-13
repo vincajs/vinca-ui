@@ -1,0 +1,17 @@
+:root {
+    --background: theme('colors.light.4');
+    --foreground: theme('colors.dark.4');
+    --base: theme('colors.light.4');
+    --base-foreground: h theme('colors.dark.4');
+    --primary: theme('colors.blue.4');
+    --primary-foreground: theme('colors.light.4');
+    --secondary: theme('colors.cyan.4');
+    --secondary-foreground: theme('colors.light.4');
+}
+
+.dark {
+    --background: theme('colors.dark.4');
+    --foreground: theme('colors.light.4');
+    --base: theme('colors.dark.4');
+    --base-foreground: h theme('colors.light.4');
+}
