@@ -5,6 +5,7 @@ const navs = [
   { to: '/icon', text: 'Icon' },
   { to: '/button', text: 'Button' },
   { to: '/accordion', text: 'Accordion' },
+  { to: '/avatar', text: 'Avatar' },
   { to: '/collapsible', text: 'Collapsible' },
 ]
 </script>

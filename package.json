@@ -18,14 +18,17 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build build",
-    "dev": "nuxi dev playground",
-    "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "build": "nuxt-module-build build",
+    "prepack": "pnpm build",
+    "dev": "nuxi dev docs",
+    "play": "nuxi dev playground",
+    "build:docs": "nuxi generate docs",
     "lint": "eslint .",
-    "test": "vitest run",
-    "test:watch": "vitest watch"
+    "lint:fix": "eslint . --fix",
+    "typecheck": "vue-tsc --noEmit && nuxi typecheck docs",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare docs",
+    "release": "release-it",
+    "test": "vitest"
   },
   "dependencies": {
     "@nuxt/kit": "^3.9.1",

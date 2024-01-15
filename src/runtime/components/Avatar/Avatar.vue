@@ -13,12 +13,14 @@ export interface Props extends AvatarRootProps, PrimitiveProps {
 const props = defineProps<Props>()
 
 const classes = tv({
-  base: 'inline-flex items-center justify-center font-normal text-foreground select-none shrink-0 bg-secondary overflow-hidden',
+  base: 'inline-flex items-center justify-center font-normal text-foreground select-none shrink-0 bg-base overflow-hidden',
   variants: {
     size: {
-      sm: 'h-10 w-10 text-xs',
-      base: 'h-16 w-16 text-2xl',
-      lg: 'h-32 w-32 text-5xl',
+      xs: 'size-10 text-xs',
+      sm: 'size-12 text-sm',
+      md: 'size-14',
+      lg: 'size-16 text-lg',
+      xl: 'size-18 text-xl',
     },
     shape: {
       circle: 'rounded-full',
@@ -27,7 +29,7 @@ const classes = tv({
   },
   defaultVariants: {
     shape: 'circle',
-    size: 'sm',
+    size: 'md',
   },
 })
 </script>
