@@ -24,6 +24,6 @@ const classes = tv({
   />
   <span
     v-else
-    :class="classes({ class: props.class })"
+    :class="classes({ class: `${name} ${props.class}` })"
   />
 </template>
