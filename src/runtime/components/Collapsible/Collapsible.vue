@@ -6,7 +6,9 @@ import {
   useForwardPropsEmits,
 } from 'radix-vue'
 
-const props = defineProps<CollapsibleRootProps>()
+export interface Props extends CollapsibleRootProps {}
+
+const props = defineProps<Props>()
 
 const emit = defineEmits<CollapsibleRootEmits>()
 

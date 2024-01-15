@@ -4,14 +4,14 @@ const navs = [
   { to: '/link', text: 'Link' },
   { to: '/icon', text: 'Icon' },
   { to: '/button', text: 'Button' },
-  { to: '/collapse', text: 'Collapse' },
   { to: '/accordion', text: 'Accordion' },
+  { to: '/collapsible', text: 'Collapsible' },
 ]
 </script>
 
 <template>
   <div class="w-full flex">
-    <aside class="bg-base-200 h-full w-56 flex flex-col">
+    <aside class="h-full w-56 flex flex-col bg-base-200">
       <VLink
         v-for="nav in navs"
         class="px-4 py-2"
@@ -21,7 +21,7 @@ const navs = [
       </VLink>
     </aside>
     <div class="flex-1">
-      <header class="bg-base-200 w-full p-4">
+      <header class="w-full bg-base-200 p-4">
         header
       </header>
       <main class="p-4">
