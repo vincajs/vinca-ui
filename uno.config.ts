@@ -6,7 +6,6 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
-import presetAnimations from 'unocss-preset-animations'
 import presetTheme from 'unocss-preset-theme'
 import themes from './src/runtime/themes'
 
@@ -21,7 +20,6 @@ export default defineConfig({
         dark: themes.dark,
       },
     }),
-    // presetAnimations(),
   ],
   transformers: [
     transformerDirectives(),

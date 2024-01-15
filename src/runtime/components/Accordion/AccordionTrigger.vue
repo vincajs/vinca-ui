@@ -16,8 +16,8 @@ const props = defineProps<Props>()
 const classes = tv({
   extend: buttonClasses,
   base: [
-    'flex-1 justify-between rounded-none',
-    'data-[state=open]:(bg-base-300 hover:bg-base-300/90) active:(bg-base/85)',
+    'group flex-1 justify-between rounded-none',
+    'data-[state=open]:bg-base-300 hover:bg-base-300/90 active:bg-base/85',
   ],
 })
 </script>
@@ -26,11 +26,13 @@ const classes = tv({
   <AccordionHeader class="flex">
     <AccordionTrigger
       v-bind="{ ...props, ...reactiveOmit($attrs, 'class') }"
-      class="flex-1 justify-between"
       :class="[classes({ class: $attrs.class as string })]"
     >
       <slot>{{ title }}</slot>
-      <Icon name="i-material-symbols:keyboard-arrow-down" />
+      <Icon
+        name="i-material-symbols:keyboard-arrow-down"
+        class="transition-transform group-data-[state=open]:rotate-180"
+      />
     </AccordionTrigger>
   </AccordionHeader>
 </template>

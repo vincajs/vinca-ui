@@ -12,9 +12,11 @@ withDefaults(defineProps<Props>(), {
   <Icon
     v-if="dynamic"
     :name="name"
+    class="icon"
   />
   <span
     v-else
-    :class="name"
+    class="icon"
+    :class="[name]"
   />
 </template>
