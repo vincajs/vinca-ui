@@ -2,7 +2,9 @@
 import { tv } from 'tailwind-variants'
 import { Primitive, type PrimitiveProps } from 'radix-vue'
 
-export interface Props extends PrimitiveProps {}
+export interface Props extends PrimitiveProps {
+  class?: string
+}
 
 const props = defineProps<Props>()
 

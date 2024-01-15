@@ -1,21 +1,22 @@
 <script setup lang="ts">
-import { Primitive, type PrimitiveProps } from '../Primitive'
+import { AvatarFallback, type AvatarFallbackProps } from 'radix-vue'
 import { tv } from 'tailwind-variants'
+import type { PrimitiveProps } from '../Primitive'
 
-export interface Props extends PrimitiveProps {}
+export interface Props extends AvatarFallbackProps, PrimitiveProps {}
 
 const props = defineProps<Props>()
 
 const classes = tv({
-  base: 'px-4 py-2',
+  base: '',
 })
 </script>
 
 <template>
-  <Primitive
+  <AvatarFallback
     v-bind="props"
     :class="classes({ class: props.class })"
   >
     <slot />
-  </Primitive>
+  </AvatarFallback>
 </template>

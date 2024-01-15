@@ -3,9 +3,9 @@ import { AccordionHeader, AccordionTrigger, type AccordionTriggerProps } from 'r
 import { Icon } from '../Icon'
 import { classes as buttonClasses } from '../Button'
 import { tv } from 'tailwind-variants'
-import { reactiveOmit } from '@vueuse/core'
+import type { PrimitiveProps } from '../Primitive'
 
-export interface Props extends AccordionTriggerProps {
+export interface Props extends AccordionTriggerProps, PrimitiveProps {
   title?: string
 }
 
@@ -25,8 +25,8 @@ const classes = tv({
 <template>
   <AccordionHeader class="flex">
     <AccordionTrigger
-      v-bind="{ ...props, ...reactiveOmit($attrs, 'class') }"
-      :class="[classes({ class: $attrs.class as string })]"
+      v-bind="{ ...props, ...$attrs }"
+      :class="[classes({ class: props.class })]"
     >
       <slot>{{ title }}</slot>
       <Icon

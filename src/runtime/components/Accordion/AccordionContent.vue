@@ -2,8 +2,9 @@
 import { AccordionContent, type AccordionContentProps } from 'radix-vue'
 import { Card } from '../Card'
 import { tv } from 'tailwind-variants'
+import type { PrimitiveProps } from '../Primitive'
 
-export interface Props extends AccordionContentProps {
+export interface Props extends AccordionContentProps, PrimitiveProps {
   content?: string
 }
 
@@ -21,7 +22,7 @@ const classes = tv({
 <template>
   <AccordionContent
     v-bind="props"
-    :class="classes()"
+    :class="classes({ class: props.class })"
   >
     <Card>
       <slot>{{ content }}</slot>

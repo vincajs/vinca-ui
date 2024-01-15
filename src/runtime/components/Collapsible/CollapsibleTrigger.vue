@@ -4,8 +4,9 @@ import { classes as buttonClasses } from '../Button'
 import { Icon } from '../Icon'
 import { tv } from 'tailwind-variants'
 import { reactiveOmit } from '@vueuse/core'
+import type { PrimitiveProps } from '../Primitive'
 
-export interface Props extends CollapsibleTriggerProps {
+export interface Props extends CollapsibleTriggerProps, PrimitiveProps {
   title?: string
 }
 
@@ -23,7 +24,7 @@ const classes = tv({
 <template>
   <CollapsibleTrigger
     v-bind="{ ...props, ...reactiveOmit($attrs, 'class') }"
-    :class="[classes({ class: $attrs.class as string })]"
+    :class="classes({ class: props.class })"
   >
     <slot>{{ title }}</slot>
     <Icon

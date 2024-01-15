@@ -28,7 +28,7 @@ const classes = tv({
   <NuxtLink
     v-if="as === 'NuxtLink'"
     v-bind="forwarded"
-    :class="classes({ disabled })"
+    :class="classes({ disabled, class: props.class })"
   >
     <slot />
   </NuxtLink>

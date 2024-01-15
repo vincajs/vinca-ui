@@ -17,7 +17,7 @@ const classes = tv({
 <template>
   <AccordionItem
     v-bind="props"
-    :class="classes()"
+    :class="classes({ class: props.class })"
   >
     <slot
       v-if="title"

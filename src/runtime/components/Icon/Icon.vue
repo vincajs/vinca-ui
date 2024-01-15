@@ -1,10 +1,18 @@
 <script setup lang="ts">
-export interface Props {
+import type { PrimitiveProps } from '../Primitive'
+import { tv } from 'tailwind-variants'
+
+export interface Props extends PrimitiveProps {
   name: string
   dynamic?: boolean
 }
-withDefaults(defineProps<Props>(), {
+
+const props = withDefaults(defineProps<Props>(), {
   dynamic: false,
+})
+
+const classes = tv({
+  base: 'icon',
 })
 </script>
 
@@ -12,11 +20,10 @@ withDefaults(defineProps<Props>(), {
   <Icon
     v-if="dynamic"
     :name="name"
-    class="icon"
+    :class="classes({ class: props.class })"
   />
   <span
     v-else
-    class="icon"
-    :class="[name]"
+    :class="classes({ class: props.class })"
   />
 </template>

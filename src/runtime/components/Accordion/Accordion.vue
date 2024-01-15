@@ -1,16 +1,11 @@
 <script setup lang="ts">
 import { tv } from 'tailwind-variants'
-import {
-  AccordionRoot,
-  type AccordionRootEmits,
-  type AccordionRootProps,
-  type CollapsibleRootEmits,
-  useForwardPropsEmits,
-} from 'radix-vue'
+import { AccordionRoot, type AccordionRootEmits, type AccordionRootProps, useForwardPropsEmits } from 'radix-vue'
 import { AccordionItem, type AccordionItemProps } from '../Accordion'
 import { reactiveOmit } from '@vueuse/core'
+import type { PrimitiveProps } from '../Primitive'
 
-export interface Props extends AccordionRootProps {
+export interface Props extends AccordionRootProps, PrimitiveProps {
   items: Array<AccordionItemProps>
 }
 
@@ -30,7 +25,7 @@ const classes = tv({
 <template>
   <AccordionRoot
     v-bind="forwarded"
-    :class="classes()"
+    :class="classes({ class: props.class })"
   >
     <slot>
       <AccordionItem

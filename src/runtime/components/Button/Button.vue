@@ -30,7 +30,7 @@ const forwarded = useForwardProps(reactiveOmit(props, 'disabled', 'loading'))
   <Link
     :disabled="disabled || loading"
     v-bind="forwarded"
-    :class="classes({ color, variant, size, loading, disabled, class: $attrs.class as string })"
+    :class="classes({ color, variant, size, loading, disabled, class: props.class })"
   >
     <slot name="prepend" />
     <slot>
