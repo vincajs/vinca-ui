@@ -34,9 +34,9 @@ const forwarded = useForwardProps(reactiveOmit(props, 'disabled', 'loading'))
   >
     <slot name="prepend" />
     <slot>
-      <span v-if="label">
+      <template v-if="label">
         {{ label }}
-      </span>
+      </template>
     </slot>
     <slot name="append" />
   </Link>

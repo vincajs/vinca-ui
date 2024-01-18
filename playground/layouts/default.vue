@@ -8,6 +8,8 @@ const navs = [
   { to: '/avatar', text: 'Avatar' },
   { to: '/checkbox', text: 'Checkbox' },
   { to: '/collapsible', text: 'Collapsible' },
+  { to: '/combobox', text: 'Combobox' },
+  { to: '/input', text: 'Input' },
 ]
 </script>
 

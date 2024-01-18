@@ -1,9 +1,5 @@
 <script setup lang="ts">
-const vv = ref('indeterminate')
-watch(vv, a => console.log(a))
-function aaaa() {
-  console.log(123)
-}
+
 </script>
 
 <template>
