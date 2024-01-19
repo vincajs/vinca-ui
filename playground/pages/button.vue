@@ -5,20 +5,14 @@
 <template>
   <div class="flex flex-col gap-4">
     <div class="flex flex-col gap-4">
-      <h1>Colors</h1>
+      <h1>Filled</h1>
       <div class="flex items-center gap-4">
         <VButton>Default</VButton>
-        <VButton color="neutral">
-          Neutral
-        </VButton>
         <VButton color="primary">
           Primary
         </VButton>
         <VButton color="secondary">
           Secondary
-        </VButton>
-        <VButton color="accent">
-          Accent
         </VButton>
         <VButton color="info">
           Info
@@ -35,19 +29,90 @@
       </div>
     </div>
     <div class="flex flex-col gap-4">
-      <h1>Variants</h1>
+      <h1>Outlined</h1>
       <div class="flex items-center gap-4">
-        <VButton>
+        <VButton variant="outlined">
           Default
         </VButton>
-        <VButton variant="outline">
-          Outline
+        <VButton
+          variant="outlined"
+          color="primary"
+        >
+          Primary
         </VButton>
-        <VButton variant="ghost">
-          Ghost
+        <VButton
+          variant="outlined"
+          color="secondary"
+        >
+          Secondary
         </VButton>
-        <VButton variant="link">
-          Link
+        <VButton
+          variant="outlined"
+          color="info"
+        >
+          Info
+        </VButton>
+        <VButton
+          variant="outlined"
+          color="success"
+        >
+          Success
+        </VButton>
+        <VButton
+          variant="outlined"
+          color="warning"
+        >
+          Warning
+        </VButton>
+        <VButton
+          variant="outlined"
+          color="error"
+        >
+          Error
+        </VButton>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      <h1>Text</h1>
+      <div class="flex items-center gap-4">
+        <VButton variant="text">
+          Default
+        </VButton>
+        <VButton
+          variant="text"
+          color="primary"
+        >
+          Primary
+        </VButton>
+        <VButton
+          variant="text"
+          color="secondary"
+        >
+          Secondary
+        </VButton>
+        <VButton
+          variant="text"
+          color="info"
+        >
+          Info
+        </VButton>
+        <VButton
+          variant="text"
+          color="success"
+        >
+          Success
+        </VButton>
+        <VButton
+          variant="text"
+          color="warning"
+        >
+          Warning
+        </VButton>
+        <VButton
+          variant="text"
+          color="error"
+        >
+          Error
         </VButton>
       </div>
     </div>
@@ -72,13 +137,90 @@
       </div>
     </div>
     <div class="flex flex-col gap-4">
-      <h1>State</h1>
+      <h1>Disabled</h1>
+      <div class="flex items-center gap-4">
+        <VButton disabled>
+          Default
+        </VButton>
+        <VButton
+          disabled
+          color="primary"
+        >
+          Primary
+        </VButton>
+        <VButton
+          disabled
+          color="secondary"
+        >
+          Secondary
+        </VButton>
+        <VButton
+          disabled
+          color="info"
+        >
+          Info
+        </VButton>
+        <VButton
+          disabled
+          color="success"
+        >
+          Success
+        </VButton>
+        <VButton
+          disabled
+          color="warning"
+        >
+          Warning
+        </VButton>
+        <VButton
+          disabled
+          color="error"
+        >
+          Error
+        </VButton>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      <h1>Loading</h1>
       <div class="flex items-center gap-4">
         <VButton loading>
-          Loading
+          Default
         </VButton>
-        <VButton disabled>
-          Disabled
+        <VButton
+          loading
+          color="primary"
+        >
+          Primary
+        </VButton>
+        <VButton
+          loading
+          color="secondary"
+        >
+          Secondary
+        </VButton>
+        <VButton
+          loading
+          color="info"
+        >
+          Info
+        </VButton>
+        <VButton
+          loading
+          color="success"
+        >
+          Success
+        </VButton>
+        <VButton
+          loading
+          color="warning"
+        >
+          Warning
+        </VButton>
+        <VButton
+          loading
+          color="error"
+        >
+          Error
         </VButton>
       </div>
     </div>

@@ -24,30 +24,43 @@ export default {
         'collapsible-up': 'ease-in-out',
       },
     },
+  },
+  light: {
     colors: {
-      base: {
+      default: {
         DEFAULT: color.light[400],
         foreground: color.dark[400],
         ...color.light,
       },
       primary: {
-        DEFAULT: color.sky[500],
-        foreground: color.light[500],
+        DEFAULT: color.sky[400],
+        foreground: color.light[400],
       },
       secondary: {
-        DEFAULT: color.cyan[500],
-        foreground: color.light[500],
+        DEFAULT: color.cyan[400],
+        foreground: color.light[400],
       },
-      accent: color.fuchsia[500],
-      info: color.sky[500],
-      success: color.green[500],
-      warning: color.amber[500],
-      error: color.red[500],
+      info: {
+        DEFAULT: color.sky[400],
+        foreground: color.light[400],
+      },
+      success: {
+        DEFAULT: color.green[400],
+        foreground: color.light[400],
+      },
+      warning: {
+        DEFAULT: color.amber[400],
+        foreground: color.light[400],
+      },
+      error: {
+        DEFAULT: color.red[400],
+        foreground: color.light[400],
+      },
     },
   },
   dark: {
     colors: {
-      base: {
+      default: {
         DEFAULT: color.dark[400],
         foreground: color.light[400],
         ...color.dark,

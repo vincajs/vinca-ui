@@ -1,40 +1,147 @@
 import { tv } from 'tailwind-variants'
 
 export default tv({
-  base: 'inline-flex justify-center items-center gap-2 shrink-0 rounded',
+  base: 'inline-flex justify-center items-center shrink-0 rounded transition-all active:translate-y-0.5',
   variants: {
     color: {
-      base: 'bg-base text-base-foreground hover:bg-base/90 active:bg-base/85',
-      neutral: 'bg-neutral text-light hover:(bg-neutral/90) active:(bg-neutral/85)',
-      primary: 'bg-primary text-primary-foreground hover:(bg-primary/90) active:(bg-primary/85)',
-      secondary: 'bg-secondary text-secondary-foreground hover:(bg-secondary/90) active:(bg-secondary/85)',
-      accent: 'bg-accent text-light hover:(bg-accent/90) active:(bg-accent/85)',
-      info: 'bg-info text-light hover:(bg-info/90) active:(bg-info/85)',
-      success: 'bg-success text-light hover:(bg-success/90) active:(bg-success/85)',
-      warning: 'bg-warning text-light hover:(bg-warning/90) active:(bg-warning/85)',
-      error: 'bg-error text-white hover:(bg-error/90) active:(bg-error/85)',
+      default: '',
+      primary: '',
+      secondary: '',
+      info: '',
+      success: '',
+      warning: '',
+      error: '',
     },
     variant: {
-      outline: 'border border-current bg-transparent text-foreground',
-      ghost: 'bg-transparent text-foreground',
-      link: 'underline bg-transparent text-foreground',
+      filled: '',
+      outlined: 'border border-current bg-transparent',
+      text: 'bg-transparent',
     },
     size: {
-      xs: 'h-6 px-1 text-xs',
-      sm: 'h-8 px-2 text-sm',
-      md: 'h-10 px-4 py-2',
-      lg: 'h-12 px-6 text-lg',
-      xl: 'h-14 px-8 text-xl',
-    },
-    loading: {
-      true: 'cursor-not-allowed pointer-events-none',
+      xs: 'h-6 px-1 gap-0.5 text-xs',
+      sm: 'h-7 px-2 gap-1 text-sm',
+      md: 'h-8 px-3 gap-1.5 text-base',
+      lg: 'h-9 px-4 gap-2 text-lg',
+      xl: 'h-10 px-5 gap-2.5 text-xl',
     },
     disabled: {
-      true: 'bg-base/30 text-base-foreground/30 cursor-not-allowed pointer-events-none',
+      true: 'opacity-65 cursor-not-allowed pointer-events-none',
+    },
+    loading: {
+      true: 'opacity-65 cursor-not-allowed pointer-events-none',
     },
   },
+  compoundVariants: [
+    {
+      variant: 'filled',
+      color: 'default',
+      class: 'bg-default text-default-foreground hover:bg-default/90',
+    },
+    {
+      variant: 'filled',
+      color: 'primary',
+      class: 'bg-primary text-primary-foreground hover:bg-primary/90',
+    },
+    {
+      variant: 'filled',
+      color: 'secondary',
+      class: 'bg-secondary text-secondary-foreground hover:bg-secondary/90',
+    },
+    {
+      variant: 'filled',
+      color: 'info',
+      class: 'bg-info text-info-foreground hover:bg-info/90',
+    },
+    {
+      variant: 'filled',
+      color: 'success',
+      class: 'bg-success text-success-foreground hover:bg-success/90',
+    },
+    {
+      variant: 'filled',
+      color: 'warning',
+      class: 'bg-warning text-warning-foreground hover:bg-warning/90',
+    },
+    {
+      variant: 'filled',
+      color: 'error',
+      class: 'bg-error text-error-foreground hover:bg-error/90',
+    },
+    {
+      variant: 'outlined',
+      color: 'default',
+      class: 'text-default-foreground',
+    },
+    {
+      variant: 'outlined',
+      color: 'primary',
+      class: 'text-primary',
+    },
+    {
+      variant: 'outlined',
+      color: 'secondary',
+      class: 'text-secondary',
+    },
+    {
+      variant: 'outlined',
+      color: 'info',
+      class: 'text-info',
+    },
+    {
+      variant: 'outlined',
+      color: 'success',
+      class: 'text-success',
+    },
+    {
+      variant: 'outlined',
+      color: 'warning',
+      class: 'text-warning',
+    },
+    {
+      variant: 'outlined',
+      color: 'error',
+      class: 'text-error',
+    },
+    {
+      variant: 'text',
+      color: 'default',
+      class: 'text-default-foreground  hover:bg-neutral/20',
+    },
+    {
+      variant: 'text',
+      color: 'primary',
+      class: 'text-primary  hover:bg-neutral/20',
+    },
+    {
+      variant: 'text',
+      color: 'secondary',
+      class: 'text-secondary  hover:bg-neutral/20',
+    },
+    {
+      variant: 'text',
+      color: 'info',
+      class: 'text-info  hover:bg-neutral/20',
+    },
+    {
+      variant: 'text',
+      color: 'success',
+      class: 'text-success  hover:bg-neutral/20',
+    },
+    {
+      variant: 'text',
+      color: 'warning',
+      class: 'text-warning  hover:bg-neutral/20',
+    },
+    {
+      variant: 'text',
+      color: 'error',
+      class: 'text-error hover:bg-neutral/20',
+    },
+  ],
   defaultVariants: {
-    color: 'base',
+    color: 'default',
+    variant: 'filled',
     size: 'md',
+    loadingIcon: 'i-svg-spinners:90-ring-with-bg',
   },
 })

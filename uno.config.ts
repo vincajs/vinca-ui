@@ -17,6 +17,7 @@ export default defineConfig({
     presetTypography(),
     presetTheme({
       theme: {
+        light: themes.light,
         dark: themes.dark,
       },
     }),
