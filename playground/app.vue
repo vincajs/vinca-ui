@@ -2,8 +2,6 @@
 import { presetUno } from 'unocss'
 
 const colors = presetUno().theme.colors
-
-console.log(presetUno())
 </script>
 
 <template>

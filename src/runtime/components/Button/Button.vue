@@ -1,10 +1,17 @@
 <script setup lang="ts">
-import type { VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import type { LinkProps } from '../Link'
 import { Link } from '../Link'
 import { useForwardProps } from 'radix-vue'
 import { reactiveOmit } from '@vueuse/core'
-import { classes } from '.'
+import { useUI } from '#ui/composables/useUI'
+
+const props = withDefaults(defineProps<Props>(), {
+  type: 'button',
+  as: 'button',
+})
+
+const { classes } = useUI('button', props.ui)
 
 type Variants = VariantProps<typeof classes>
 
@@ -17,11 +24,6 @@ export interface Props extends LinkProps {
   label?: string
   loading?: boolean
 }
-
-const props = withDefaults(defineProps<Props>(), {
-  type: 'button',
-  as: 'button',
-})
 
 const forwarded = useForwardProps(reactiveOmit(props, 'disabled', 'loading'))
 </script>

@@ -9,9 +9,6 @@ import { name, version } from '../package.json'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
-  /**
-   * Prefix for all the imported component
-   */
   prefix?: string
 }
 
@@ -19,17 +16,19 @@ export default defineNuxtModule<ModuleOptions>({
   meta: {
     name,
     version,
-    configKey: 'violet',
+    configKey: 'vinca',
   },
-  // Default configuration options of the Nuxt module
   defaults: {
     prefix: 'V',
   },
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
-
     const runtimeDir = resolve('./runtime')
+    nuxt.options.build.transpile.push(runtimeDir)
+
+    nuxt.options.alias['#ui'] = runtimeDir
     nuxt.options.css.push('@unocss/reset/tailwind-compat.css')
+
     // nuxt.options.css.push(resolve(runtimeDir, 'ui.css'))
 
     await installModule('nuxt-icon')

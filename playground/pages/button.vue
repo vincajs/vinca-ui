@@ -82,5 +82,16 @@
         </VButton>
       </div>
     </div>
+    <div class="flex flex-col gap-4">
+      <h1>preset</h1>
+      <div class="flex items-center gap-4">
+        <VButton>
+          Button
+        </VButton>
+        <VButton :ui="{ base: 'rounded-sm' }">
+          Button
+        </VButton>
+      </div>
+    </div>
   </div>
 </template>

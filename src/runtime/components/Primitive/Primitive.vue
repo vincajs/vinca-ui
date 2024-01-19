@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { tv } from 'tailwind-variants'
+import { type TV, type TVReturnType, type TVVariants, tv } from 'tailwind-variants'
 import { Primitive, type PrimitiveProps } from 'radix-vue'
+import type { TVConfig } from 'tailwind-variants/dist/config'
 
 export interface Props extends PrimitiveProps {
   class?: string
+  classes?: string
+  ui?: any
 }
 
 const props = defineProps<Props>()
