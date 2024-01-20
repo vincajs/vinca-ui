@@ -1,28 +1,27 @@
 <script setup lang="ts">
-import type { VariantProps } from 'tailwind-variants'
 import type { PrimitiveProps } from '../Primitive'
-
-type Variants = VariantProps<typeof classes>
+import type { InputVariantProps } from '#ui/presets/vinca'
+import { useUI } from '#ui/composables/useUI'
 
 export interface Props extends PrimitiveProps {
   type?: string
-  color?: Variants['color']
-  variant?: Variants['variant']
-  size?: Variants['size']
+  variant?: InputVariantProps['variant']
+  size?: InputVariantProps['size']
 }
 
 const props = defineProps<Props>()
 
 const model = defineModel<string | number>()
 
-const { base, input, prefix, suffix } = classes()
+const { ui } = useUI('input', props.ui)
+
+const { base, input } = ui()
 </script>
 
 <template>
-  <div :class="base({ size, variant, class: props.class })">
+  <div :class="base({ size, class: props.class })">
     <slot
       name="prefix"
-      :class="prefix()"
     />
     <input
       v-bind="props"
@@ -31,7 +30,6 @@ const { base, input, prefix, suffix } = classes()
     >
     <slot
       name="suffix"
-      :class="suffix()"
     />
   </div>
 </template>

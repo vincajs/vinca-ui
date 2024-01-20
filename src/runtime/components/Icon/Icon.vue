@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<Props>(), {
   dynamic: false,
 })
 
-const { ui } = useUI('link', props.ui)
+const { ui } = useUI('icon', props.ui)
 </script>
 
 <template>

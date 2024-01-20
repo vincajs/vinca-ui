@@ -5,7 +5,6 @@ import type { TVConfig } from 'tailwind-variants/dist/config'
 
 export interface Props extends PrimitiveProps {
   class?: string
-  classes?: string
   ui?: any
 }
 

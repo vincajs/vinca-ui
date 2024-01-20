@@ -5,7 +5,7 @@ const input = ref('123')
 <template>
   <div class="flex flex-col gap-4">
     <div class="flex flex-col gap-4">
-      <h1>Default</h1>
+      <h1>Sizes</h1>
       <div class="flex items-center gap-4">
         <VInput
           v-model="input"

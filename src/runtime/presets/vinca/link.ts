@@ -1,6 +1,7 @@
+import type { VariantProps } from '#ui/utils/tv'
 import { tv } from '#ui/utils/tv'
 
-export default tv({
+const link = tv({
   base: '',
   variants: {
     disabled: {
@@ -8,3 +9,7 @@ export default tv({
     },
   },
 })
+
+export type LinkVariantProps = VariantProps<typeof link>
+
+export { link }

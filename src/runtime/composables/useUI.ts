@@ -1,8 +1,9 @@
 import { useAppConfig } from '#imports'
 import { tv } from 'tailwind-variants'
 import * as preset from '../presets/vinca'
+import type { AppConfig } from 'nuxt/schema'
 
-interface AppConfig {
+interface Config extends AppConfig {
   vinca?: {
     preset?: typeof preset
   }
@@ -10,9 +11,9 @@ interface AppConfig {
 
 type Key = 'link' | 'icon' | 'button' | 'input'
 
-export function useUI(key: Key, $ui?: object) {
-  const appConfig = useAppConfig() as AppConfig
-  const extend = appConfig?.vinca?.preset?.[key] ?? preset?.[key]
+export function useUI<T extends Key>(key: T, $ui?: object) {
+  const appConfig = useAppConfig() as Config
+  const extend = appConfig?.vinca?.preset?.[key] ?? preset[key]
 
   const ui = tv({
     extend,

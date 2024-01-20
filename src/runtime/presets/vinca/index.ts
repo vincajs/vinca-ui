@@ -1,4 +1,4 @@
-export { default as link } from './link'
-export { default as icon } from './icon'
-export { default as button } from './button'
-export { default as input } from './input'
+export { link, type LinkVariantProps } from './link'
+export { icon, type IconVariantProps } from './icon'
+export { button, type ButtonVariantProps } from './button'
+export { input, type InputVariantProps } from './input'

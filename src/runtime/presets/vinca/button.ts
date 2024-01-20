@@ -1,8 +1,16 @@
-import { tv } from '#ui/utils/tv'
+import { type VariantProps, tv } from '#ui/utils/tv'
 
-export default tv({
-  base: 'inline-flex justify-center items-center shrink-0 rounded transition-all active:translate-y-0.5',
+const button = tv({
+  slots: {
+    base: 'inline-flex justify-center items-center shrink-0 rounded transition-all active:translate-y-0.5',
+    loadingIcon: 'i-svg-spinners:90-ring-with-bg',
+  },
   variants: {
+    variant: {
+      filled: '',
+      outlined: 'border border-current bg-transparent',
+      text: 'bg-transparent',
+    },
     color: {
       default: '',
       primary: '',
@@ -11,11 +19,6 @@ export default tv({
       success: '',
       warning: '',
       error: '',
-    },
-    variant: {
-      filled: '',
-      outlined: 'border border-current bg-transparent',
-      text: 'bg-transparent',
     },
     size: {
       xs: 'h-6 px-1 gap-0.5 text-xs',
@@ -138,10 +141,8 @@ export default tv({
       class: 'text-error hover:bg-neutral/20',
     },
   ],
-  defaultVariants: {
-    color: 'default',
-    variant: 'filled',
-    size: 'md',
-    loadingIcon: 'i-svg-spinners:90-ring-with-bg',
-  },
 })
+
+export type ButtonVariantProps = VariantProps<typeof button>
+
+export { button }
