@@ -12,7 +12,7 @@ export interface Props extends PrimitiveProps {
 const props = defineProps<Props>()
 
 const classes = tv({
-  base: 'bg-base',
+  base: 'bg-default',
 })
 </script>
 

@@ -2,7 +2,7 @@
 import { useForwardProps } from 'radix-vue'
 import { Primitive, type PrimitiveProps } from '../Primitive'
 import type { NuxtLinkProps } from '#app/components/nuxt-link'
-import { tv } from 'tailwind-variants'
+import { useUI } from '#ui/composables/useUI'
 
 export interface Props extends NuxtLinkProps, PrimitiveProps {
   disabled?: boolean
@@ -12,23 +12,16 @@ const props = withDefaults(defineProps<Props>(), {
   as: 'NuxtLink',
 })
 
-const forwarded = useForwardProps(props)
+const { ui } = useUI('link', props.ui)
 
-const classes = tv({
-  base: '',
-  variants: {
-    disabled: {
-      true: 'cursor-not-allowed pointer-events-none',
-    },
-  },
-})
+const forwarded = useForwardProps(props)
 </script>
 
 <template>
   <NuxtLink
     v-if="as === 'NuxtLink'"
     v-bind="forwarded"
-    :class="classes({ disabled, class: props.class })"
+    :class="ui({ disabled, class: props.class })"
   >
     <slot />
   </NuxtLink>

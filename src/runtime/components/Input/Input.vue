@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { VariantProps } from 'tailwind-variants'
 import type { PrimitiveProps } from '../Primitive'
-import { classes } from '.'
 
 type Variants = VariantProps<typeof classes>
 

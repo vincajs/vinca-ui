@@ -1,29 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { VariantProps } from 'tailwind-variants'
-import type { LinkProps } from '../Link'
-import { Link } from '../Link'
+import type { VariantProps } from '#ui/utils/tv'
+import { Link, type LinkProps } from '../Link'
 import { Icon } from '../Icon'
 import { useForwardProps } from 'radix-vue'
 import { reactiveOmit } from '@vueuse/core'
 import { useUI } from '#ui/composables/useUI'
 
-const props = withDefaults(defineProps<Props>(), {
-  type: 'button',
-  as: 'button',
-})
-
-const { classes } = useUI('button', props.ui)
-
-const prefixIcon = computed(() => {
-  if (props.loading) {
-    return classes.defaultVariants?.loadingIcon
-  }
-
-  return props.icon
-})
-
-type Variants = VariantProps<typeof classes>
+type Variants = VariantProps<typeof ui>
 
 export interface Props extends LinkProps {
   type?: string
@@ -36,6 +20,21 @@ export interface Props extends LinkProps {
   loading?: boolean
 }
 
+const props = withDefaults(defineProps<Props>(), {
+  type: 'button',
+  as: 'button',
+})
+
+const { ui } = useUI('button', props.ui)
+
+const prefixIcon = computed(() => {
+  if (props.loading) {
+    return ui.defaultVariants?.loadingIcon
+  }
+
+  return props.icon
+})
+
 const forwarded = useForwardProps(reactiveOmit(props, 'disabled', 'loading'))
 </script>
 
@@ -43,7 +42,7 @@ const forwarded = useForwardProps(reactiveOmit(props, 'disabled', 'loading'))
   <Link
     :disabled="disabled || loading"
     v-bind="forwarded"
-    :class="classes({ color, variant, size, loading, disabled, class: props.class })"
+    :class="ui({ color, variant, size, loading, disabled, class: props.class })"
   >
     <slot name="prefix">
       <Icon

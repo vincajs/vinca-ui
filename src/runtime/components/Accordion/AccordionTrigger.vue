@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { AccordionHeader, AccordionTrigger, type AccordionTriggerProps } from 'radix-vue'
 import { Icon } from '../Icon'
-import { classes as buttonClasses } from '../Button'
 import { tv } from 'tailwind-variants'
 import type { PrimitiveProps } from '../Primitive'
 
@@ -14,10 +13,9 @@ defineOptions({ inheritAttrs: false })
 const props = defineProps<Props>()
 
 const classes = tv({
-  extend: buttonClasses,
   base: [
     'group flex-1 justify-between rounded-none',
-    'data-[state=open]:bg-base-300 hover:bg-base-300/90 active:bg-base/85',
+    'data-[state=open]:bg-default-300 hover:bg-default-300/90 active:bg-default/85',
   ],
 })
 </script>

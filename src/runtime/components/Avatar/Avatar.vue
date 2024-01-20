@@ -13,7 +13,7 @@ export interface Props extends AvatarRootProps, PrimitiveProps {
 const props = defineProps<Props>()
 
 const classes = tv({
-  base: 'inline-flex items-center justify-center font-normal text-foreground select-none shrink-0 bg-base overflow-hidden',
+  base: 'inline-flex items-center justify-center font-normal text-foreground select-none shrink-0 bg-default overflow-hidden',
   variants: {
     size: {
       xs: 'size-10 text-xs',

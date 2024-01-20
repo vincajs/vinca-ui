@@ -16,7 +16,7 @@ const classes = tv({
   extend: buttonClasses,
   base: [
     'flex group flex-1 justify-between rounded-none',
-    'data-[state=open]:bg-base-300 hover:bg-base-300/90 active:bg-base/85',
+    'data-[state=open]:bg-default-300 hover:bg-default-300/90 active:bg-default/85',
   ],
 })
 </script>

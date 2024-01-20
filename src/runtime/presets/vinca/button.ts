@@ -1,4 +1,4 @@
-import { tv } from 'tailwind-variants'
+import { tv } from '#ui/utils/tv'
 
 export default tv({
   base: 'inline-flex justify-center items-center shrink-0 rounded transition-all active:translate-y-0.5',

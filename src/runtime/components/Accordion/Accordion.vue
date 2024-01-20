@@ -18,7 +18,7 @@ const emits = defineEmits<AccordionRootEmits>()
 const forwarded = useForwardPropsEmits(reactiveOmit(props, 'items'), emits)
 
 const classes = tv({
-  base: 'divide-y divide-base-1',
+  base: 'divide-y divide-default-1',
 })
 </script>
 
