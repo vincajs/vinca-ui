@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useForwardProps } from 'radix-vue'
 import { Primitive, type PrimitiveProps } from '../Primitive'
-import type { NuxtLinkProps } from '#app/components/nuxt-link'
 import { useUI } from '#ui/composables/useUI'
+import type { NuxtLinkProps } from 'nuxt/app'
 
 export interface Props extends NuxtLinkProps, PrimitiveProps {
   disabled?: boolean
