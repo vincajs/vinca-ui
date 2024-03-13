@@ -1,7 +1,10 @@
 import config from '@antfu/eslint-config'
 
 export default config({
-  unocss: true,
+  typescript: true,
+  vue: true,
+  jsonc: false,
+  yaml: false,
   rules: {
     'ts/no-require-imports': 'off',
     'ts/no-var-requires': 'off',

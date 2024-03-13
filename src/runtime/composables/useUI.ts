@@ -1,26 +1,16 @@
-import { useAppConfig } from '#imports'
-import { tv } from 'tailwind-variants'
-import * as preset from '../presets/vinca'
-import type { AppConfig } from 'nuxt/schema'
+import { twMerge } from 'tailwind-merge'
+import { reactiveOmit } from '@vueuse/core'
 
-interface Config extends AppConfig {
-  vinca?: {
-    preset?: typeof preset
-  }
-}
+export function useUI<T extends { class?: string }, K extends keyof T>(component: string, props: T, ...keys: (K | K[])[]) {
+  const app = useAppConfig()
 
-type Key = 'link' | 'icon' | 'button' | 'input'
+  const ui = app.vinca?.preset?.[component]({ props })
+  const classes = twMerge(ui, props?.class)
 
-export function useUI<T extends Key>(key: T, $ui?: object) {
-  const appConfig = useAppConfig() as Config
-  const extend = appConfig?.vinca?.preset?.[key] ?? preset[key]
-
-  const ui = tv({
-    extend,
-    ...$ui,
-  })
+  const pickedProps = reactiveOmit(props, 'class' as keyof T, ...keys)
 
   return {
-    ui,
+    classes,
+    pickedProps,
   }
 }

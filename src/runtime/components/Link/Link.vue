@@ -1,33 +1,31 @@
 <script setup lang="ts">
-import { useForwardProps } from 'radix-vue'
 import { Primitive, type PrimitiveProps } from '../Primitive'
-import { useUI } from '#ui/composables/useUI'
 import type { NuxtLinkProps } from 'nuxt/app'
+import { useUI } from '../../composables/useUI'
 
 export interface Props extends NuxtLinkProps, PrimitiveProps {
   disabled?: boolean
 }
-
 const props = withDefaults(defineProps<Props>(), {
-  as: 'NuxtLink',
+  as: 'button',
 })
 
-const { ui } = useUI('link', props.ui)
-
-const forwarded = useForwardProps(props)
+const isLink = computed(() => !!(props.href || props.to))
+const { classes, pickedProps } = useUI('Link', props)
 </script>
 
 <template>
   <NuxtLink
-    v-if="as === 'NuxtLink'"
-    v-bind="forwarded"
-    :class="ui({ disabled, class: props.class })"
+    v-if="isLink"
+    v-bind="pickedProps"
+    :class="classes"
   >
     <slot />
   </NuxtLink>
   <Primitive
     v-else
-    v-bind="forwarded"
+    v-bind="pickedProps"
+    :class="classes"
   >
     <slot />
   </Primitive>

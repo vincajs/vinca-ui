@@ -1,27 +1,19 @@
 <script setup lang="ts">
 import type { PrimitiveProps } from '../Primitive'
-import { useUI } from '#ui/composables/useUI'
+import { useUI } from '../../composables/useUI'
 
 export interface Props extends PrimitiveProps {
   name: string
-  dynamic?: boolean
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  dynamic: false,
-})
+const props = defineProps<Props>()
 
-const { ui } = useUI('icon', props.ui)
+const { classes, pickedProps } = useUI('Icon', props)
 </script>
 
 <template>
-  <Icon
-    v-if="dynamic"
-    :name="name"
-    :class="ui({ class: props.class })"
-  />
   <span
-    v-else
-    :class="ui({ class: `${name} ${props.class}` })"
+    v-bind="pickedProps"
+    :class="[name, classes]"
   />
 </template>

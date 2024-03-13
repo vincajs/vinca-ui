@@ -1,10 +1,7 @@
-import { tv } from 'tailwind-variants'
-import * as vinca from '../src/runtime/presets/vinca'
+import preset from '@/presets/vinca'
 
 export default defineAppConfig({
-  vincaui: {
-    preset: {
-
-    },
+  vinca: {
+    preset,
   },
 })

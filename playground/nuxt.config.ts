@@ -1,9 +1,10 @@
-import { tv } from 'tailwind-variants'
-
 export default defineNuxtConfig({
-  modules: ['../src/module', '@unocss/nuxt'],
+  modules: ['../src/module'],
+  css: ['~/assets/app.css'],
   devtools: { enabled: true },
-  vinca: {
-
+  postcss: {
+    plugins: {
+      '@tailwindcss/postcss': {},
+    },
   },
 })
